@@ -12,7 +12,11 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-order: function ();
+  //returns the content of the arrays based on the passed indexes
+  //this function "order" is another key of the obj restaurant
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -57,3 +61,26 @@ console.log(main, second);
 //switch the variables with destructuring
 //this time we dont need temp variable
 [main, second] = [second, main];
+console.log(main, second);
+
+//destructuring assignment
+//receive 2 return vaues from a function
+const [starter, mainCourse] = restaurant.order(2, 0); // garlic bread & pizza
+console.log(starter, mainCourse);
+
+//nested destructuring
+const nested = [2, 4, [5, 6]];
+const [i, , j] = nested;
+console.log(i, j); // 2 & [5,6]
+
+//retrieve all the values of a nested array
+//destructuring inside destructuring
+const [s, , [t, d]] = nested;
+console.log(s, t, d); // 2 5 6
+
+//set default values for the values we are extracting
+//usefull when we don't know the length of the array
+//default values
+//without the default values, r would be seen as undefined in teh console log
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r); // 8 9 1
