@@ -52,6 +52,39 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Logical Assignment Operator///////////////
+const rest1 = {
+  name: 'capri',
+  numGuests: 20,
+};
+const rest2 = {
+  name: 'la piazza',
+  owner: 'luigi',
+};
+
+//OR assignment operator
+//define a default nb of guests for obj that do have that property
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+//AND assignment operator
+//if there is a name, we want to say anonymous
+// rest1.owner = rest1.owner && 10;
+// rest2.owner = rest2.owner && 10;
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+//Nullish assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+/*
 ///////////////Nullish Coaliscing Operator///////////////
 //will return the 1st nullish value
 //if none are present it will then just return the last value
@@ -62,6 +95,7 @@ console.log(guest); // 10
 
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect); // 0
+*/
 /*
 ///////////////Short Circuiting///////////////
 // || and && can
