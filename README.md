@@ -17,3 +17,5 @@ objName.funcName({param1: "x", param2: "y", param3: 5});\
 spread operator...\
 type arrName2 = [...arrName1];\
 const objNameCopy = {...objName};\
+rest pattern\
+type [a,b, ...others] = [1,2,3,4,5];\
