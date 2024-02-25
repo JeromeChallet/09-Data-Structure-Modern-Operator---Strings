@@ -46,8 +46,58 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`our pastas are made of ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+///////////////Rest Pattern & Parameters///////////////
+// 1) destructuring
+//looks like the ... but does the opposite
+//it collects multiple elements and condense them into an array
+//the spread operator will unpack an array while the rest pattern will pack them
+//it's a spread because on the right side of =
+const arr = [1, 2, ...[3, 4]];
+//rest syntax cause ... on the left side of =
+//it's called rest cause it will take the rest of the elements and create a new array called others here
+//the rest pattern collect the rest of the elements that are unused in the destructuring assignment
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+//the rest element must be the last and there can only be one
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays); //only containing fri and thu
+
+// 2) functions
+//in this case the rest pattern is called the rest parameter
+//the rest syntax is taking multiple nb and packing them into 1 array
+const add = function (...numbers) {
+  console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum); //returns the sum of those numbers no matter how many are passed
+};
+
+add(2, 3);
+add(5, 3, 6, 4, 2);
+add(5, 3, 8, 4, 1, 8, 6);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach'); //'onions', 'olives', 'spinach'
+/*
 ///////////////Spread Operator///////////////
 //expand an array into all its elements
 //unpacking all the array elements at once
@@ -106,6 +156,8 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name); // Ristorante Roma
 console.log(restaurant.name); // Classico Italiano
+*/
+
 /*
 ///////////////Destructiring Objects///////////////
   //when a function has a lot of parameters,
