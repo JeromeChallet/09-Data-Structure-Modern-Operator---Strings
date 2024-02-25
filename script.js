@@ -243,7 +243,7 @@ console.log(restaurantCopy.name); // Ristorante Roma
 console.log(restaurant.name); // Classico Italiano
 */
 
-/*
+
 ///////////////Destructiring Objects///////////////
   //when a function has a lot of parameters,
   //instead of remembering and writting down all those parameters,
