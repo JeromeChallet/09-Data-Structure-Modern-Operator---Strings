@@ -32,15 +32,45 @@ const restaurant = {
       close: 24,
     },
   },
-};
 
+  //when a function has a lot of parameters,
+  //instead of remembering and writting down all those parameters,
+  //we declare an object inside that function and then destructure that object where needed
+  //we are nesting all the parameters into one egg that will then be delivered with all the parameters inside
+  //in this function, only one object was passed, not 4 arguments
+  // and as soon as we receive this obj, we imediatly do destructuring
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+};
 ///////////////Destructiring Objects///////////////
+
+//we are calling the func orderDelivery and passing it an obj of options
+//the following is a single obj
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'tokyo',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+restaurant.orderDelivery({
+  address: 'paris',
+  starterIndex: 1,
+});
+
 //unlike arrays, we dont have to skip with empty spaces or follow the order of the propeerties
 const { name, openingHours, categories } = restaurant;
 //now hte props of the obj are variables
 console.log(name, openingHours, categories);
 
-//mke the var name be diiferent fromm the property name
+//make the var name be diiferent fromm the property name
 const {
   name: restaurantName,
   openingHours: hours,
@@ -67,6 +97,8 @@ const {
 console.log(fri);
 console.log(open, close); // 11 & 23
 console.log(o, c); // 11 & 23
+
+//
 
 /*
 ///////////////Destructiring Arrays///////////////

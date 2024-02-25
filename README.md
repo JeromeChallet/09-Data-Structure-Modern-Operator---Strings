@@ -11,3 +11,6 @@ Destructuring Objects\
 type {propName1=newName1=[], propName2=newName2=[], propName3=newName3=[]} = objName;
 Nested Destructuring Objects\
 type {propNamel1:{propNamel2, propNamel2}} = nestedObjName;\
+Pass all the parameters of a function inside an object\
+funcName: function ({param1, param2, param3}){use of params};\
+objName.funcName({param1: "x", param2: "y", param3: 5});\
