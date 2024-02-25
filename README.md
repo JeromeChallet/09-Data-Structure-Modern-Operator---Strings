@@ -24,3 +24,6 @@ obj.funcName && obj.funcName('param1', 'param2')\
 Nullish Coaliscing Operator ??\
 nullish: null and undefined (not 0 or '')\
 const varName = obj.param ?? 10;
+Logical Assignment Operator ||= &&= ??=\
+obj.param1 ||= 10;
+obj.param1 &&= '<ANONYMOUS>';
