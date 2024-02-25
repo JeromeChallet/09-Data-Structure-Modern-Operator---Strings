@@ -32,13 +32,6 @@ const restaurant = {
       close: 24,
     },
   },
-
-  //when a function has a lot of parameters,
-  //instead of remembering and writting down all those parameters,
-  //we declare an object inside that function and then destructure that object where needed
-  //we are nesting all the parameters into one egg that will then be delivered with all the parameters inside
-  //in this function, only one object was passed, not 4 arguments
-  // and as soon as we receive this obj, we imediatly do destructuring
   orderDelivery: function ({
     starterIndex = 1,
     mainIndex = 0,
@@ -49,9 +42,78 @@ const restaurant = {
       `order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
-};
-///////////////Destructiring Objects///////////////
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`our pastas are made of ${ing1}, ${ing2}, ${ing3}`);
+  },
+};
+
+///////////////Spread Operator///////////////
+//expand an array into all its elements
+//unpacking all the array elements at once
+//the difference with destructuring is that ... takes all the elements out of the array and doesn't create new variables
+//meaning we can only use the ... in places where we would normally write values separated by commas
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr); //(5) [1, 2, 7, 8, 9]
+//the ... is usefull to retrive all the elements individually of an array
+console.log(...newArr); // 1 2 7 8 9
+
+//adds more elements to the original array mainMenu
+const newMenu = [...restaurant.mainMenu, 'gnocci'];
+console.log(newMenu);
+
+//use case 1 : create shallow copies of arrays
+const mainMenuCopy = [...restaurant.mainMenu];
+//use case 2 : merge 2 arrays together
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+//works on all iterables (arrays, strings, maps, sets but !objects)
+const str = 'jerome';
+const letters = [...str, '', 'C.'];
+console.log(letters);
+console.log(...str); // j e r o m e
+//wont work cause not a place expecting values separated by a comma
+//values seperated by a comma are only expected when we pass arguments into a function or when we build a new array
+//console.log(`${...str} Challet`);
+//that would work though
+const jName = ['jerome', 'patrice'];
+const fullName = `${jName.join(' ')} Challet`;
+console.log(fullName);
+
+//function that accepts multiple arg and use ... to pass them
+const ingredients = [
+  prompt('Ingredient 1?'),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3?'),
+];
+console.log(ingredients);
+
+//will write the 3 elements of the array separated by commas
+restaurant.orderPasta(...ingredients);
+
+// objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'mario' };
+console.log(newRestaurant);
+
+//copy object
+//copying an obj this way means the properties will be copied but not the values
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name); // Ristorante Roma
+console.log(restaurant.name); // Classico Italiano
+/*
+///////////////Destructiring Objects///////////////
+  //when a function has a lot of parameters,
+  //instead of remembering and writting down all those parameters,
+  //we declare an object inside that function and then destructure that object where needed
+  //we are nesting all the parameters into one egg that will then be delivered with all the parameters inside
+  //in this function, only one object was passed, not 4 arguments
+  // and as soon as we receive this obj, we imediatly do destructuring
 //we are calling the func orderDelivery and passing it an obj of options
 //the following is a single obj
 restaurant.orderDelivery({
@@ -99,7 +161,7 @@ console.log(open, close); // 11 & 23
 console.log(o, c); // 11 & 23
 
 //
-
+*/
 /*
 ///////////////Destructiring Arrays///////////////
 //unpacking values from an array or obj into seperate variables
