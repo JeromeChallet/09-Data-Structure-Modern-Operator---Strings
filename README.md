@@ -20,4 +20,7 @@ const objNameCopy = {...objName};\
 rest pattern\
 type [a,b, ...others] = [1,2,3,4,5];\
 Short Circuiting\
-obj.funcName && obj.funcName('param1', 'param2')
+obj.funcName && obj.funcName('param1', 'param2')\
+Nullish Coaliscing Operator ??\
+nullish: null and undefined (not 0 or '')\
+const varName = obj.param ?? 10;

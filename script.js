@@ -52,6 +52,17 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Nullish Coaliscing Operator///////////////
+//will return the 1st nullish value
+//if none are present it will then just return the last value
+//nullish: null and undefined (not 0 or '')
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests ?? 10;
+console.log(guest); // 10
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); // 0
+/*
 ///////////////Short Circuiting///////////////
 // || and && can
 // 1) use ANY data type
@@ -89,7 +100,7 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
-
+*/
 /*
 ///////////////Rest Pattern & Parameters///////////////
 // 1) destructuring
