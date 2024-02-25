@@ -52,6 +52,25 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Looping Arrays For Loop///////////////
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+//retrieve the current element
+//the item variable is always the current element in each iteration
+for (const item of menu) console.log(item);
+
+//retrieve the current index
+//each of the item is an array maed of the index and array element itself
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//array iterator
+//array where each position contains a new array
+console.log([...menu.entries()]);
+/*
 ///////////////Logical Assignment Operator///////////////
 const rest1 = {
   name: 'capri',
@@ -84,6 +103,7 @@ rest2.owner &&= '<ANONYMOUS>';
 //Nullish assignment operator
 rest1.numGuests ??= 10;
 rest2.numGuests ??= 10;
+*/
 /*
 ///////////////Nullish Coaliscing Operator///////////////
 //will return the 1st nullish value
@@ -243,7 +263,7 @@ console.log(restaurantCopy.name); // Ristorante Roma
 console.log(restaurant.name); // Classico Italiano
 */
 
-
+/*
 ///////////////Destructiring Objects///////////////
   //when a function has a lot of parameters,
   //instead of remembering and writting down all those parameters,

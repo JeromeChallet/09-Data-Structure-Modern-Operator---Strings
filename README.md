@@ -25,5 +25,11 @@ Nullish Coaliscing Operator ??\
 nullish: null and undefined (not 0 or '')\
 const varName = obj.param ?? 10;
 Logical Assignment Operator ||= &&= ??=\
-obj.param1 ||= 10;
-obj.param1 &&= '<ANONYMOUS>';
+obj.param1 ||= 10;\
+obj.param1 &&= '<ANONYMOUS>';\
+for of loop\
+item element\
+for (type item of arrayName) console.log(item);
+for (const item of arrayName.entries()) {\
+console.log(item);//each of the is an array}\
+array iterator: [...arrayName.entries()]\
