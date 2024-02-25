@@ -34,6 +34,41 @@ const restaurant = {
   },
 };
 
+///////////////Destructiring Objects///////////////
+//unlike arrays, we dont have to skip with empty spaces or follow the order of the propeerties
+const { name, openingHours, categories } = restaurant;
+//now hte props of the obj are variables
+console.log(name, openingHours, categories);
+
+//mke the var name be diiferent fromm the property name
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating a variable
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+//when using {}, JS expect a codeblock
+//but we cannot use one here so put it all in ()
+({ a, b } = obj);
+console.log(a, b); // 23 & 7
+
+//nested objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(fri);
+console.log(open, close); // 11 & 23
+console.log(o, c); // 11 & 23
+
+/*
 ///////////////Destructiring Arrays///////////////
 //unpacking values from an array or obj into seperate variables
 
@@ -84,3 +119,4 @@ console.log(s, t, d); // 2 5 6
 //without the default values, r would be seen as undefined in teh console log
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); // 8 9 1
+*/
