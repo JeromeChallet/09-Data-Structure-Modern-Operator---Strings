@@ -52,7 +52,45 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Short Circuiting///////////////
+// || and && can
+// 1) use ANY data type
+// 2) return ANY data type
+// 3) short circuiting or short-circuit evaluation
+//if the 1st value is a truthy value, it will immediatly return it
+//but if none are truthy, it will return the last value
+//really usefull for defining default values
+console.log('----OR----');
+console.log(3 || 'jerome'); // 3
+console.log('' || 'jerome'); // jerome
+console.log(true || 0); // 0
+console.log(undefined || null); // null
+console.log(undefined || 0 || '' || 'hello' || 23 || null); // hello
 
+//will define a default value of 10
+//the following method does not work with 0
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+// will again define a default value of 10 but with short-circuiting
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log('----AND----');
+//if the 1st value is a falsy value, it will immediatly return it
+console.log(0 && 'jerome'); // 0
+console.log(7 && 'jerome'); // jerome
+console.log('hello' && 23 && null && 'jerome'); // null
+
+//practical example
+//avoid an if statement when possible
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+/*
 ///////////////Rest Pattern & Parameters///////////////
 // 1) destructuring
 //looks like the ... but does the opposite
@@ -97,6 +135,8 @@ const x = [23, 5, 7];
 add(...x);
 
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach'); //'onions', 'olives', 'spinach'
+*/
+
 /*
 ///////////////Spread Operator///////////////
 //expand an array into all its elements
