@@ -14,3 +14,6 @@ type {propNamel1:{propNamel2, propNamel2}} = nestedObjName;\
 Pass all the parameters of a function inside an object\
 funcName: function ({param1, param2, param3}){use of params};\
 objName.funcName({param1: "x", param2: "y", param3: 5});\
+spread operator...\
+type arrName2 = [...arrName1];\
+const objNameCopy = {...objName};\
