@@ -36,3 +36,7 @@ array iterator: [...arrayName.entries()]\
 Enhanced Object Literals\
 compute property name: [arrayName[3]]\
 funcName(){}\
+Optional Chaning\
+restaurant?.openingHours?.mon?.open\
+objName.objPropName[varName]\
+objName.objMethodName?.(arg1, arg2) ?? result\
