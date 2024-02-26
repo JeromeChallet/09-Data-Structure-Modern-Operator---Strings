@@ -59,3 +59,4 @@ mapName.get('keyName');\
 mapName.has('keyName');\
 mapName.size;\
 mapName.clear;\
+mapName.set(document.querySelector('h1'), 'Heading');\
