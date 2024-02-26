@@ -63,7 +63,46 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Maps Iteration///////////////
+//a map is a data structure to map values to keys
+//the difference with objects is that the type of values of maps can be of any type
+const rest = new Map();
+rest.set('name', 'classico itliano');
+rest.set(1, 'paris, france');
+console.log(rest.set(2, 'tokyo, japan')); // name:classico italiano, 1:paris, france, 2:tokyo, japan
+//we can chain the value set one after another
+//the set method returns the updated map
+rest
+  .set('Italian', 'Pizzeria', 'Vegetarian', 'Organic')
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we r open')
+  .set(false, 'we r closed');
 
+//get method reads data from a map
+console.log(rest.get('name')); // classico italiano
+console.log(rest.get(true)); //we r open
+
+const time = 21;
+//is the current time between 23 and 11
+console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); // we r open
+
+console.log(rest.has('categories')); // true
+rest.delete(2);
+//rest.clear();
+
+console.log(rest); // tokyo is gone
+console.log(rest.size); //7
+//using obj an arrays as map keys
+//this will highlight the actuall h1 from the page
+rest.set(document.querySelector('h1'), 'Heading'); // h1 => "Heading"
+const arr = [1, 2];
+rest.set([1, 2], test);
+//this wont work cause this array is not the same written above, from the heap
+rest.get([1, 2]);
+//but this one will work as it is the same from the heap
+rest.get(arr);
+/*
 ///////////////Sets///////////////
 //sets are collection of unique values meaing they no duplicates
 //sets can hold mixed data types
@@ -104,6 +143,7 @@ console.log(
 ); // 3
 //how many letters there are in a string
 console.log(new Set('jeromechallet').size); //13
+*/
 /*
 ///////////////Looping Objects: Keys, Values, Entries///////////////
 //Looping over objects that are not iterables in an indirect way
