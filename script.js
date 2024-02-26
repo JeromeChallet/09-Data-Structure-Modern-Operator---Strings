@@ -64,6 +64,35 @@ const restaurant = {
   },
 };
 
+///////////////Looping Objects: Keys, Values, Entries///////////////
+//Looping over objects that are not iterables in an indirect way
+//looping over property names/keys
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `we r open on ${properties.length} days: `;
+
+//for (const day of Object.keys(openingHours)) {
+for (const day of properties) {
+  // console.log(day); //thu fri sat
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+//looping over Property Values
+const values = Object.values(openingHours);
+console.log(values);
+
+//looping over entire object, entries (name + value together)
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+//returns each key and each value
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+/*
 ///////////////Optional Chaining///////////////
 //if a certain property does not exist then udefined is returned imediatly
 //only if the property before ?. exists then the following property will read
@@ -86,7 +115,7 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'method does not exist'); //does 
 const users = [{ name: 'jerome', email: 'hello@jerome.com' }];
 
 console.log(users[0]?.name ?? 'Users array empty');
-
+*/
 /*
 ///////////////Looping Arrays For Loop///////////////
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];

@@ -40,3 +40,9 @@ Optional Chaning\
 restaurant?.openingHours?.mon?.open\
 objName.objPropName[varName]\
 objName.objMethodName?.(arg1, arg2) ?? result\
+for (const indexName of Object.keys(objPropNameKey)) {\
+console.log(indexName);}\
+type varName = Object.values(objPropValueName);\
+returns each key and each value\
+for (const [key, { objPropValueName1, objPropValueName2 }] of objName) {
+console.log(`On ${key} we open at ${objPropValueName1} and close at $\{objPropValueName2}`);}\
