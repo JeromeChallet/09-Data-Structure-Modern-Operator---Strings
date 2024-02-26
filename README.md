@@ -53,3 +53,10 @@ setName.add('elementName')\
 setName.delete('elementName')\
 setName.clear()\
 type arrName = [...new Set(steName)];\
+type mapName = new Map();\
+mapName.set(key, value).set(key, value).set(key, value);\
+mapName.get('keyName');\
+mapName.has('keyName');\
+mapName.size;\
+mapName.clear;\
+mapName.set(document.querySelector('h1'), 'Heading');\
