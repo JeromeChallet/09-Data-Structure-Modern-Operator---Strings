@@ -46,3 +46,10 @@ type varName = Object.values(objPropValueName);\
 returns each key and each value\
 for (const [key, { objPropValueName1, objPropValueName2 }] of objName) {
 console.log(`On ${key} we open at ${objPropValueName1} and close at $\{objPropValueName2}`);}\
+type varName = new Set(iterable)\
+setName.size\
+setName.has('elementName')\
+setName.add('elementName')\
+setName.delete('elementName')\
+setName.clear()\
+type arrName = [...new Set(steName)];\

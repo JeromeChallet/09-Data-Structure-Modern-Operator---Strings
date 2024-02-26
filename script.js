@@ -64,6 +64,47 @@ const restaurant = {
   },
 };
 
+///////////////Sets///////////////
+//sets are collection of unique values meaing they no duplicates
+//sets can hold mixed data types
+//like arrays sets are also iterables
+//unlike arrays the var in sets are unique and the order is irrelevant
+//sets have no indexes though
+const orderSet = new Set([
+  'pasta',
+  'pizza',
+  'pizza',
+  'risotto',
+  'pasta',
+  'pizza',
+]);
+console.log(orderSet); // pasta, pizza, risotto
+console.log(new Set('jerome')); //j e r o m e
+console.log(orderSet.size); //3
+console.log(orderSet.has('pizza')); //true
+console.log(orderSet.has('banana')); //false
+orderSet.add('garlic bread');
+orderSet.add('garlic bread');
+orderSet.delete('risotto');
+console.log(orderSet); // pasta, pizza, garlic bread
+console.log(orderSet[0]); // error
+//orderSet.clear();
+
+for (const order of orderSet) console.log(order);
+
+//in a codebase the main use of sets to remove duplicate values
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+//conversion from a set to an array
+//create an array, then unpack the set into it with ...
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique); // waiter, chef, manager
+//to know how many different positions there are
+console.log(
+  new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+); // 3
+//how many letters there are in a string
+console.log(new Set('jeromechallet').size); //13
+/*
 ///////////////Looping Objects: Keys, Values, Entries///////////////
 //Looping over objects that are not iterables in an indirect way
 //looping over property names/keys
@@ -91,7 +132,7 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
-
+*/
 /*
 ///////////////Optional Chaining///////////////
 //if a certain property does not exist then udefined is returned imediatly
