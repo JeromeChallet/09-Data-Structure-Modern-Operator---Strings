@@ -33,3 +33,6 @@ for (type item of arrayName) console.log(item);
 for (const item of arrayName.entries()) {\
 console.log(item);//each of the is an array}\
 array iterator: [...arrayName.entries()]\
+Enhanced Object Literals\
+compute property name: [arrayName[3]]\
+funcName(){}\
