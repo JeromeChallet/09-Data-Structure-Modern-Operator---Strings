@@ -63,7 +63,29 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-///////////////Enhanced Object Literals///////////////
+
+///////////////Optional Chaining///////////////
+//if a certain property does not exist then udefined is returned imediatly
+//only if the property before ?. exists then the following property will read
+console.log(restaurant?.openingHours?.mon?.open); //undefned
+
+// loop over the array to check is the restaurant is open or closed on each of the day
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  console.log(day);
+  //to be able to use a variable name as a property name, we use []
+  restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Check is a certain method exists before we call it
+console.log(restaurant.order?.(0, 1) ?? 'method does not exist'); //exist
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'method does not exist'); //does not exist
+
+//Arrays
+const users = [{ name: 'jerome', email: 'hello@jerome.com' }];
+
+console.log(users[0]?.name ?? 'Users array empty');
 
 /*
 ///////////////Looping Arrays For Loop///////////////
@@ -73,7 +95,7 @@ const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item);
 
 //retrieve the current index
-//each of the item is an array maed of the index and array element itself
+//each of the item is an array made of the index and array element itself
 // for (const item of menu.entries()) {
 //   console.log(`${item[0] + 1}: ${item[1]}`);
 // }
