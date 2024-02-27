@@ -60,3 +60,13 @@ mapName.has('keyName');\
 mapName.size;\
 mapName.clear;\
 mapName.set(document.querySelector('h1'), 'Heading');\
+type mapName = new Map([[key, value],[key, value]]);\
+Convert Object to Map\
+type mapName = new Map(Object.entries(objName));\
+map iteration\
+for (type [key, value] of mapName);\
+Convert map to array\
+[...mapName];\
+(mapName.entries());
+(mapName.keys());
+(mapName.values());

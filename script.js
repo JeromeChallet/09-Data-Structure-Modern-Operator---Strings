@@ -64,6 +64,44 @@ const restaurant = {
   },
 };
 ///////////////Maps Iteration///////////////
+//instead of constantly adding elements to the map with .set, we can declare them all from the start
+const question = new Map([
+  ['question', 'what is the best prog lang in the world?'],
+  [1, 'c'],
+  [2, 'java'],
+  [3, 'js'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'wrong'],
+]);
+console.log(question);
+
+//convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//iterations
+//because we have already converted the question to an iterable with Object.entries we don't need to use .entries here
+//quizz app
+console.log(question.get('question')); //question here is the key not the map name
+for (const [key, value] of question) {
+  //only print if the key is a number
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+//get the answer from the user with a prompt
+const answer = Number(prompt('Your answer: '));
+console.log(answer);
+console.log(question.get(question.get('correct') === answer));
+
+//convert map to an array
+console.log([...question]);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
+
+/*
+///////////////Maps Fundamentals///////////////
 //a map is a data structure to map values to keys
 //the difference with objects is that the type of values of maps can be of any type
 const rest = new Map();
@@ -102,6 +140,7 @@ rest.set([1, 2], test);
 rest.get([1, 2]);
 //but this one will work as it is the same from the heap
 rest.get(arr);
+*/
 /*
 ///////////////Sets///////////////
 //sets are collection of unique values meaing they no duplicates
