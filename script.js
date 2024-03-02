@@ -89,7 +89,7 @@ console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); // w
 
 console.log(rest.has('categories')); // true
 rest.delete(2);
-//rest.clear();
+//rest.clear(); 
 
 console.log(rest); // tokyo is gone
 console.log(rest.size); //7
