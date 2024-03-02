@@ -102,7 +102,7 @@ rest.set([1, 2], test);
 rest.get([1, 2]);
 //but this one will work as it is the same from the heap
 rest.get(arr);
-/*
+
 ///////////////Sets///////////////
 //sets are collection of unique values meaing they no duplicates
 //sets can hold mixed data types
