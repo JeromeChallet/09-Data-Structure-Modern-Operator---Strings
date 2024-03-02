@@ -63,6 +63,64 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+///////////////Working With String 1///////////////
+const airline = 'TAP Air Japan';
+const plane = 'A320';
+
+console.log(plane(0)); //A
+console.log(plane(1));
+console.log(plane(2));
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('a')); //8
+console.log(airline.lastIndexOf('a')); //10
+console.log(airline.indexOf('Japan')); //3
+
+// 1. Extract parts from a string using a slice method
+// the slice method needs indexes as arguments
+// 4 is the position at which extraction will start
+// this is called a substring cause its just a part of the original string
+console.log(airline.slice(4)); // Air Japan
+// 7 is the end parameter
+// the length of the slice is always end - start
+console.log(airline.slice(4, 7)); // Air
+//extract the 1st word
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+//extract the last word
+console.log(airline.slice(airline.lastIndexOf(' ')) + 1); // Japan
+
+// starts counting from the end
+console.log(airline.slice(-2)); // an
+// retrieves all but the first and last character
+console.log(airline.slice(1, -1)); // AP Air Japa
+
+// check if the seat is in the middle
+
+const checkMiddleSeat = function (seat) {
+  //B and A are the middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('u got a middle seat');
+  else console.log('u got lucky');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+// string a re primitives and therefore shouldnt have methods
+// but HS automatically converts them into obj when necessary
+// it's called boxing, JS puts a string into an obj box
+// all string method return primitive, even when called on string obj
+// it's because JS converts back the string to a primtive once th eoperation is done
+console.log(new String('jerome')); //String {"jerome"}
+console.log(typeof new String('jerome')); // object
+console.log(typeof new String('jerome'.slice(1))); // string
+
+/*
 ///////////////Maps Iteration///////////////
 //instead of constantly adding elements to the map with .set, we can declare them all from the start
 const question = new Map([
@@ -97,9 +155,12 @@ console.log(question.get(question.get('correct') === answer));
 //convert map to an array
 console.log([...question]);
 console.log(question.entries());
+//retrieves the keys only
 console.log(question.keys());
-console.log(question.values());
 
+//retrieves the values only
+console.log(question.values());
+*/
 /*
 ///////////////Maps Fundamentals///////////////
 //a map is a data structure to map values to keys
