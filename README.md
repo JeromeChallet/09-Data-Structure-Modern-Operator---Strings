@@ -82,3 +82,9 @@ strName.replaceAll('val1', 'val2');\
 strName.replace(/val1/g, 'val2');\
 strName.include('val');\
 strName.startsWith('val');\
+strName.split('val');\
+strName.join('val');\
+strName.padStart('val1', 'val2);\
+const str = number + '';\
+strName.join('val');\
+strName.repeat(nb);\

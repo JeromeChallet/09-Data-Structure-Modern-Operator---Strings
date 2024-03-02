@@ -63,6 +63,61 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Working With String 3///////////////
+// split will split a string based on a divider 'string'
+console.log('a+very+nice+string'.split('+'));
+console.log('jerome challet'.split(' '));
+
+const [firtName, lastName] = 'Jerome Challet'.split(' ');
+
+const newName = ['Mr.', firtName, lastName.toUpperCase()].join(' ');
+console.log(newName); //Mr. Jerome CHALLET
+
+// capitalize names first letters
+const capitalizedName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(names.join(' '));
+};
+
+capitalizedName('jessica ann smith davis');
+capitalizedName('jerome challet');
+
+// padding
+const message = 'go to gate 23';
+//adds character to the beginning of the string
+console.log(message.padStart(25, '+').padEnd(35, '+'));
+console.log('Jerome'.padStart(23, '+'));
+
+const maskCreditCard = function (number) {
+  //this will return the number but as a string
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(23452345));
+console.log(maskCreditCard(2903475029348750293));
+console.log(maskCreditCard('890278943520892345'));
+
+// repeat
+// repeats the same str multiple time
+const message2 = 'bad weather... All departures Delayed ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`there r ${n} planes in line ${'✈.repeat(n'}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+/*
 ///////////////Working With String 2///////////////
 const airline = 'TAP Air Japan';
 
@@ -129,6 +184,7 @@ if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
   checkBaggage('I have Food');
   checkBaggage('I have a gun some gums');
 }
+*/
 /*
 ///////////////Working With String 1///////////////
 const airline = 'TAP Air Japan';
