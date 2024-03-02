@@ -63,7 +63,73 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////Working With String 2///////////////
+const airline = 'TAP Air Japan';
 
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// fix capitalization in name
+const passenger = 'jErOme';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); // Jerome
+
+// Comparing emails
+const email = 'hello@jerome.io';
+const loginEmail = '  Hello@Jerome.Io \n';
+
+//const lowerCase = loginEmail.toLowerCase();
+// .trim() gets rid of the whitespaces and \n
+//const trimmedEmail = loginEmail.trim();
+//console.log(trimmedEmail);
+// this line is the equivalent of what is above
+// putting methods after another like that is called chaining
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+//replacing
+const priceGB = '288.97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23, Boarding door 23';
+
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+// regular expression
+// will also replace door with gate everywhere, g is for global
+console.log(announcement.replace(/door/g, 'gate'));
+
+// booleans
+const plane = 'A32neo';
+console.log(plane.includes('A320')); // true
+console.log(plane.includes('Boeing')); // false
+console.log(plane.startsWith('Air')); // true
+console.log(plane.startsWith('Aib')); // false
+
+//check if the plane is part of the airbus family
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('part of the new airbus family');
+
+  //is the baggage allowed on the plane
+  // a rule of thumb when checking strings is to put everything to lower case first to make it easier to compare
+  const checkBaggage = function (items) {
+    const baggage = items.toLowerCase();
+    if (baggage.includes('knife') || baggage.includes('gun')) {
+      console.log('u r not allowed onboard');
+    } else {
+      console.log('welcome aboard');
+    }
+  };
+  checkBaggage('I have a laptop and pocket knife');
+  checkBaggage('I have Food');
+  checkBaggage('I have a gun some gums');
+}
+/*
 ///////////////Working With String 1///////////////
 const airline = 'TAP Air Japan';
 const plane = 'A320';
@@ -119,7 +185,7 @@ checkMiddleSeat('3E');
 console.log(new String('jerome')); //String {"jerome"}
 console.log(typeof new String('jerome')); // object
 console.log(typeof new String('jerome'.slice(1))); // string
-
+*/
 /*
 ///////////////Maps Iteration///////////////
 //instead of constantly adding elements to the map with .set, we can declare them all from the start

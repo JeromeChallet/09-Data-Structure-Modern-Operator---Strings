@@ -67,6 +67,18 @@ map iteration\
 for (type [key, value] of mapName);\
 Convert map to array\
 [...mapName];\
-(mapName.entries());
-(mapName.keys());
-(mapName.values());
+(mapName.entries());\
+(mapName.keys());\
+(mapName.values());\
+strName.slice(val1, val2);\
+strName.indexOf();\
+strName.lastIndexOf();\
+strName.toLowerCase();\
+strName.toUpperCase();\
+strName.trim();\
+strName.toLowerCase().trim();\
+strName.replace('val1', 'val2');\
+strName.replaceAll('val1', 'val2');\
+strName.replace(/val1/g, 'val2');\
+strName.include('val');\
+strName.startsWith('val');\
