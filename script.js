@@ -63,6 +63,8 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+///////////////String Method Practice///////////////
+
 ///////////////Working With String 3///////////////
 // split will split a string based on a divider 'string'
 console.log('a+very+nice+string'.split('+'));
