@@ -64,7 +64,8 @@ const restaurant = {
   },
 };
 ///////////////String Method Practice///////////////
-
+console.log(flights.split('+'));
+/*
 ///////////////Working With String 3///////////////
 // split will split a string based on a divider 'string'
 console.log('a+very+nice+string'.split('+'));
@@ -119,6 +120,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
 /*
 ///////////////Working With String 2///////////////
 const airline = 'TAP Air Japan';
